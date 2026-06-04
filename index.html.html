@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>موسيقاتي | عالم الموسيقى</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma;
+    direction:rtl;
+    background:#111;
+    color:white;
+    line-height:1.8;
+}
+
+/* الهيدر */
+
+header{
+    background:#000;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #ff0000;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:32px;
+    color:#ff0000;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff0000;
+}
+
+/* الصفحة الرئيسية */
+
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1400') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.75);
+    padding:50px;
+    border-radius:20px;
+    width:80%;
+    animation:fadeIn 2s ease;
+}
+
+.overlay h1{
+    font-size:60px;
+    color:#ff0000;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    font-size:24px;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff0000;
+    color:white;
+    padding:15px 35px;
+    border-radius:10px;
+    text-decoration:none;
+    transition:0.3s;
+    font-size:18px;
+}
+
+.btn:hover{
+    background:white;
+    color:#ff0000;
+}
+
+/* الحركة الترويجية */
+
+.promo{
+    margin-top:30px;
+    font-size:30px;
+    color:#fff;
+    animation:moveText 3s infinite alternate;
+}
+
+@keyframes moveText{
+    from{
+        transform:translateX(-20px);
+    }
+
+    to{
+        transform:translateX(20px);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* الأقسام */
+
+section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+section h2{
+    color:#ff0000;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+/* البطاقات */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#1e1e1e;
+    width:300px;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 0 15px rgba(255,0,0,0.3);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,0,0,0.7);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#ff0000;
+    margin:15px 0;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+/* من نحن */
+
+.about{
+    background:#000;
+    padding:80px 30px;
+}
+
+.about p{
+    max-width:900px;
+    margin:auto;
+    font-size:22px;
+}
+
+/* التواصل */
+
+.contact{
+    background:#1a1a1a;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+textarea{
+    height:150px;
+}
+
+button{
+    background:#ff0000;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:18px;
+}
+
+button:hover{
+    background:white;
+    color:#ff0000;
+}
+
+/* السوشال ميديا */
+
+.social{
+    margin-top:40px;
+}
+
+.social a{
+    color:white;
+    font-size:30px;
+    margin:15px;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.social a:hover{
+    color:#ff0000;
+}
+
+/* الفوتر */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:20px;
+    border-top:3px solid #ff0000;
+}
+
+/* الجوال */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    .overlay h1{
+        font-size:38px;
+    }
+
+    .overlay p{
+        font-size:18px;
+    }
+
+    .promo{
+        font-size:22px;
+    }
+
+}
+
+</style>
+
+<!-- مكتبة الأيقونات -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<header>
+
+    <div class="logo">🎵 موسيقاتي</div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#products">المنتجات</a>
+        <a href="#gifts">الهدايا</a>
+        <a href="#offers">العروض</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+
+</header>
+
+<!-- الصفحة الرئيسية -->
+
+<section class="hero" id="home">
+
+    <div class="overlay">
+
+        <h1>مرحباً بكم في موسيقاتي</h1>
+
+        <p>
+            اكتشف أكبر تشكيلة من الآلات الموسيقية 
+            ومعدات الاستديو الاحترافية بأفضل الأسعار والجودة العالية.
+        </p>
+
+        <a href="#products" class="btn">تصفح المنتجات</a>
+
+        <div class="promo">
+            🎶 عروض حصرية • معدات احترافية • تجربة موسيقية متكاملة 🎶
+        </div>
+
+    </div>
+
+</section>
+
+<!-- المنتجات -->
+
+<section id="products">
+
+    <h2>منتجاتنا</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800">
+            <h3>القيثارات</h3>
+            <p>أفضل أنواع القيثارات الكلاسيكية والكهربائية.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=800">
+            <h3>البيانو</h3>
+            <p>بيانو احترافي لعشاق الموسيقى والعزف الراقي.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?q=80&w=800">
+            <h3>الدرمز والطبول</h3>
+            <p>معدات إيقاعية احترافية بجودة عالية.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800">
+            <h3>العود</h3>
+            <p>أعواد شرقية أصيلة لمحبي الطرب العربي.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=800">
+            <h3>معدات الاستديو</h3>
+            <p>مايكروفونات وسماعات ومكسرات احترافية.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- الهدايا -->
+
+<section id="gifts">
+
+    <h2>قسم الهدايا</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800">
+            <h3>إكسسوارات موسيقية</h3>
+            <p>هدايا مميزة لعشاق الموسيقى.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516280030429-27679b3dc9cf?q=80&w=800">
+            <h3>كوبونات شراء</h3>
+            <p>بطاقات هدايا وكوبونات حصرية.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- العروض -->
+
+<section id="offers">
+
+    <h2>العروض الخاصة</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=800">
+            <h3>خصومات الصيف</h3>
+            <p>تخفيضات تصل إلى 40% على الآلات الموسيقية.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516280030429-27679b3dc9cf?q=80&w=800">
+            <h3>باقات حصرية</h3>
+            <p>احصل على معدات كاملة بأسعار مميزة.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- من نحن -->
+
+<section class="about" id="about">
+
+    <h2>من نحن</h2>
+
+    <p>
+        موسيقاتي هو متجر متخصص في بيع الآلات الموسيقية 
+        ومعدات الاستديو الاحترافية، نسعى لتقديم أفضل تجربة 
+        تسوق لعشاق الموسيقى من خلال منتجات عالية الجودة 
+        وفريق محترف يمتلك خبرة واسعة في المجال الموسيقي.
+    </p>
+
+</section>
+
+<!-- تواصل معنا -->
+
+<section class="contact" id="contact">
+
+    <h2>تواصل معنا</h2>
+
+    <form>
+
+        <input type="text" placeholder="الاسم الكامل">
+
+        <input type="email" placeholder="البريد الإلكتروني">
+
+        <textarea placeholder="اكتب رسالتك هنا"></textarea>
+
+        <button type="submit">إرسال</button>
+
+    </form>
+
+    <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-youtube"></i></a>
+
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+
+    </div>
+
+</section>
+
+<!-- الفوتر -->
+
+<footer>
+
+    <p>© 2026 جميع الحقوق محفوظة | موسيقاتي</p>
+
+</footer>
+
+</body>
+</html>
